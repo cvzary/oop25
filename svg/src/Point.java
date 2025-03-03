@@ -8,7 +8,7 @@ public class Point {
     }
 
     public String toSvg(){
-        return "<circle r=\"5\" cx=\""+x+"\" cy=\""+y+"\" fill=\"black\"/>";
+        return "<circle r=\"5\" cx=\""+x+"\" cy=\""+y+"\" fill=\"black\" />";
     }
 
     public void translate(double dx, double dy){
