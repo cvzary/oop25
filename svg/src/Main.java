@@ -40,6 +40,9 @@ public class Main {
         Segment result = Segment.maxSegment(segments); //wywołujemy na rzecz klasy
         System.out.println("Najdluższy: "+result.length());
 
+        System.out.println("Segment toString: " + segment.toString());
+
+        System.out.println("Segment toSvg: " + segment.toSvg());
     }
 
 
