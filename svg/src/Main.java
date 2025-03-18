@@ -1,48 +1,53 @@
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello and welcome!");
+    public static void main(String[] args) throws IOException {
         Point p1 = new Point();
-        p1.x = 30.0;
-        p1.y = 24.0;
+        p1.setX(30.0);
+        p1.setY(24.0);
 
         System.out.println(p1);
-        System.out.println(p1.toSvg());
 
-        p1.translate(-6, 5);
-        System.out.println(p1);
-        Point tr = p1.translated(6, -5);
-        System.out.println(tr);
-        // taki sam jak tr
-        System.out.println(p1.translated(6, -5));
+        Point p2 = new Point(13.0, 65);
+        System.out.println(p2);
 
-        Segment segment = new Segment();
-        segment.a = new Point();
-        segment.a.x = 0.0;
-        segment.a.y = 0.0;
-        segment.b = new Point();
-        segment.b.x = 4.0;
-        segment.b.y = 3.0;
+        Segment s1 = new Segment(p1, p2);
+        System.out.println(s1);
 
-        System.out.println(segment.length());
-        Segment[] segments = new Segment[2];
-        segments[0] = segment;
+        p2.setX(45);
+        System.out.println(s1);
 
-        segments[1] = new Segment();
-        segments[1].a = new Point();
-        segments[1].b = new Point();
-        segments[1].a.x = 0.0;
-        segments[1].a.y = 0.0;
-        segments[1].b.x = 7.5;
-        segments[1].b.y = 5.0;
+        Point[] arr = {p1, p2, p1};
+        arr[2] = new Point(30, 65);
 
-        // segment.maxSegment(segments); tak nie robimy, metoda statyczna
-        Segment result = Segment.maxSegment(segments); //wywołujemy na rzecz klasy
-        System.out.println("Najdluższy: "+result.length());
+        Polygon poly = new Polygon(arr);
+        System.out.println(poly);
 
-        System.out.println("Segment toString: " + segment.toString());
+        p1.setX(60);
+        System.out.println(poly);
+        System.out.println(poly.toSvg());
 
-        System.out.println("Segment toSvg: " + segment.toSvg());
+        SvgScene scene = new SvgScene();
+        scene.addPolygon(poly);
+        Polygon polyCopy = new Polygon(poly);
+        scene.addPolygon(polyCopy);
+        polyCopy.setPoint(0, -40, -40);
+        polyCopy.setPoint(1, 0, 30);
+        polyCopy.setPoint(2, 40, 0);
+
+        Polygon square = new Polygon(new Point[]{
+                new Point(40, 40),
+                new Point(40, 90),
+                new Point(90, 90),
+                new Point(90, 40)
+        });
+    scene.addPolygon(square);
+        System.out.println("Scene:");
+        System.out.println(scene.toSvg());
+
+        System.out.println(polyCopy.boundingBox());
+        scene.save("rysunek.svg");
+
     }
 
 
