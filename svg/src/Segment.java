@@ -8,9 +8,31 @@ public class Segment {
         this.b = new Point(b);
     }
 
+    public Point getA() { return a; }
+    public Point getB() { return b; }
+    public Point getCenter() {
+        return new Point((a.getX()+b.getX())/2, (a.getY()+b.getY())/2);
+    }
+
     public double length() {
         return Math.sqrt(pow(a.getX()-b.getX(), 2) + pow(a.getY()-b.getY(), 2));
     }
+
+
+    public Segment[] perpendicularSegments(Point origin) {return perpendicularSegments(origin, length());}
+
+    public Segment[] perpendicularSegments(Point origin, double length){
+        double dx = b.getX() - a.getX();
+        double dy = b.getY() - a.getY();
+        dx = dx/length() * length;
+        dy = dy/length() * length;
+
+        return new Segment[]{
+                new Segment(origin, new Point(origin.getX()+dy, origin.getY()-dx)),
+                new Segment(origin, new Point(origin.getX()-dy, origin.getY()+dx))
+        };
+    }
+
 
     public static Segment maxSegment(Segment[] arr) {
         if(arr.length == 0)
