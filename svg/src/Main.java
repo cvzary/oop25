@@ -64,6 +64,4 @@ public class Main {
         System.out.println(polyCopy.boundingBox());
         scene.save("rysunek.svg");
     }
-
-
 }
