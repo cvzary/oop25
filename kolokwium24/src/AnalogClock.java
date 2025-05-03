@@ -23,7 +23,8 @@ public class AnalogClock extends Clock {
         int centerY = 200;
         int radius = 140;
         int clockSize = 2 * radius;
-        LocalTime time = setCurrentTime();
+
+        LocalTime time = LocalTime.of(getHour(),getMinute(),getSecond());
 
         for (ClockHand hand : hands) {
             hand.setTime(time);

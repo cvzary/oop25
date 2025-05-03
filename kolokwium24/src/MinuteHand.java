@@ -12,7 +12,7 @@ public class MinuteHand extends ClockHand {
     @Override
     public String toSvg() {
         return String.format(Locale.ENGLISH,"<line x1=\"200\" y1=\"200\" x2=\"200\" y2=\"90\" "+
-                "stroke=\"black\" stroke-width=\"3\" "+
+                "stroke=\"black\" stroke-width=\"4\" "+
                 "transform=\"rotate(%.1f,200,200)\" />", angle);
     }
 }

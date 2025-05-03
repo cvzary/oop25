@@ -21,7 +21,6 @@ public class Main {
 //            System.out.println();
 //        }
 //        City warsaw = cities.get("Warszawa");
-        City bangkok = cities.get("Bangkok");
 //        DigitalClock clock1 = new DigitalClock(DigitalClock.ClockMode.H24, warsaw);
 //        System.out.println(clock1);
 //        clock1.setCity(moskwa);
@@ -42,8 +41,17 @@ public class Main {
 //        for(City city : cityList) {
 //            System.out.println(city.getCityName());
 //        }
-        DigitalClock clock24 = new DigitalClock(DigitalClock.ClockMode.H24, bangkok);
-        System.out.println(clock24);
+        City moskwa = cities.get("Moskwa");
+        AnalogClock clock = new AnalogClock(moskwa);
+        System.out.println(clock);
+        clock.setCity(moskwa);
+        System.out.println(clock);
+//        clock.setTime(12,30,0);
+//        System.out.println(clock);
+//        clock.setCity(moskwa);
+//        System.out.println(clock);
+//        clock.toSvg("zegar.svg");
+//        System.out.println(clock);
 
     }
 }

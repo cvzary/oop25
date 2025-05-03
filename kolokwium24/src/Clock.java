@@ -6,17 +6,17 @@ public abstract class Clock {
     private int second;
     private City city;
 
+
     public Clock(City city) {
         this.city = city;
         setCurrentTime();
     }
 
-    public LocalTime setCurrentTime() {
+    public void setCurrentTime() {
         LocalTime now = LocalTime.now();
         this.hour = now.getHour();
         this.minute = now.getMinute();
         this.second = now.getSecond();
-        return now;
     }
 
     public void setTime(int hour, int minute, int second) {
@@ -33,10 +33,15 @@ public abstract class Clock {
     }
 
     public void setCity(City newCity) {
-        int timeDifference = newCity.getTimezone() - this.city.getTimezone();
-        this.hour = (this.hour + timeDifference) % 24;
-        if(this.hour < 0) this.hour += 24;
-        this.city = newCity;
+        int timeDifference = newCity.getTimezone() - this.city.getTimezone(); // UŻYJ starego miasta
+        System.out.println(timeDifference);
+        System.out.println("parametr timezone "+newCity.getTimezone());
+        System.out.println("obiekt glowny timezone "+this.city.getTimezone());
+        int newHour = (this.hour + timeDifference) % 24;
+        System.out.println(newHour);
+        if (newHour < 0) newHour += 24;
+        this.hour = newHour;
+        this.city = newCity; // ← dopiero teraz zmień miasto!
     }
 
     @Override

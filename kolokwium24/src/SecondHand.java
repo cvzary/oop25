@@ -6,8 +6,7 @@ public class SecondHand extends ClockHand {
 
     @Override
     public void setTime(LocalTime time) {
-        int second = time.getSecond();
-        this.angle = second * 6; // 360 stopni na 60 sekund to 1 sek = 6 stopni
+        this.angle = time.getSecond() * 6; // 360 stopni na 60 sekund to 1 sek = 6 stopni
     }
 
     @Override
