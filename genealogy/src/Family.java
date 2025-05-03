@@ -4,15 +4,16 @@ public class Family {
     private final Map<String, List<Person>> family;
 
     public Family() {
-        family = new HashMap<>();
+        this.family = new HashMap<>();
     }
 
     public void add(Person ... people) {
         for(Person p : people) {
+            String key = p.getFullName();
             if(!family.containsKey(p.getFullName())) {
-                family.put(p.getFullName(), new ArrayList<>());
+                family.put(key, new ArrayList<>());
             }
-            family.get(p.getFullName()).add(p);
+            family.get(key).add(p);
         }
     }
 

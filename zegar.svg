@@ -1,0 +1,6 @@
+<svg height="400" width="400" xmlns="http://www.w3.org/2000/svg">
+<circle r="140" cx="200" cy="200" fill="none" stroke="black" stroke-width="3" />
+<line x1="200" y1="200" x2="200" y2="130" stroke="black" stroke-width="6" transform="rotate(267.0,200,200)" />
+<line x1="200" y1="200" x2="200" y2="90" stroke="black" stroke-width="3" transform="rotate(324.5,200,200)" />
+<line x1="200" y1="200" x2="200" y2="70" stroke="red" stroke-width="2" transform="rotate(30.0,200,200)" />
+</svg>
