@@ -20,7 +20,7 @@ public class Main {
 //            System.out.println("Dlugosc geograficzna: " +city.getLongitude());
 //            System.out.println();
 //        }
-//        City warsaw = cities.get("Warszawa");
+        City warsaw = cities.get("Warszawa");
 //        DigitalClock clock1 = new DigitalClock(DigitalClock.ClockMode.H24, warsaw);
 //        System.out.println(clock1);
 //        clock1.setCity(moskwa);
@@ -41,17 +41,12 @@ public class Main {
 //        for(City city : cityList) {
 //            System.out.println(city.getCityName());
 //        }
+
+
         City moskwa = cities.get("Moskwa");
         AnalogClock clock = new AnalogClock(moskwa);
         System.out.println(clock);
-        clock.setCity(moskwa);
-        System.out.println(clock);
-//        clock.setTime(12,30,0);
-//        System.out.println(clock);
-//        clock.setCity(moskwa);
-//        System.out.println(clock);
-//        clock.toSvg("zegar.svg");
-//        System.out.println(clock);
+        clock.toSvg("zegar.svg");
 
     }
 }
