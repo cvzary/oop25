@@ -1,7 +1,9 @@
+import java.io.File;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class City {
@@ -15,6 +17,20 @@ public class City {
         this.timezone = timezone;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public static void generateAnalogClocksSvg(List<City> cities, AnalogClock clock) {
+        String folderName = clock.toString();
+        File directory = new File(folderName);
+        if(!directory.exists()) {
+            directory.mkdir();
+        }
+
+        for(City city : cities) {
+            clock.setCity(city);
+            String fileName = folderName + "/" + city.getCityName() + ".svg";
+            clock.toSvg(fileName);
+        }
     }
 
     public LocalTime localMeanTime(LocalTime time) {

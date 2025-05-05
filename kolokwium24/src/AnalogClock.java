@@ -33,6 +33,10 @@ public class AnalogClock extends Clock {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("<svg height=\"400\" width=\"400\" xmlns=\"http://www.w3.org/2000/svg\">\n");
             writer.write("<circle r=\"140\" cx=\"200\" cy=\"200\" fill=\"none\" stroke=\"black\" stroke-width=\"3\" />\n");
+            writer.write("<text x=\"200\" y=\"75\" font-size=\"20\" text-anchor=\"middle\" alignment-baseline=\"middle\">12</text>\n" +
+                    "  <text x=\"330\" y=\"205\" font-size=\"20\" text-anchor=\"middle\" alignment-baseline=\"middle\">3</text>\n" +
+                    "  <text x=\"200\" y=\"330\" font-size=\"20\" text-anchor=\"middle\" alignment-baseline=\"middle\">6</text>\n" +
+                    "  <text x=\"70\" y=\"205\" font-size=\"20\" text-anchor=\"middle\" alignment-baseline=\"middle\">9</text>");
 
             for (ClockHand hand : hands) {
                 writer.write(hand.toSvg() + "\n");

@@ -36,17 +36,23 @@ public class Main {
 //        System.out.println("Godzina 12 w Lublinie strefowo: " + lublinTime);
 //        System.out.println("Godzina 12 w Lublinie ale miejscowo(dokladnie) " + localTime);
 
-//        List<City> cityList = new ArrayList<>(cities.values());
+          List<City> cityList = new ArrayList<>(cities.values());
 //        cityList.sort(City.worstTimezoneFit());
 //        for(City city : cityList) {
 //            System.out.println(city.getCityName());
 //        }
 
+//
+//        City moskwa = cities.get("Moskwa");
+//        AnalogClock clock = new AnalogClock(moskwa);
+//        System.out.println(clock);
+//        clock.toSvg("zegar.svg");
 
-        City moskwa = cities.get("Moskwa");
-        AnalogClock clock = new AnalogClock(moskwa);
-        System.out.println(clock);
-        clock.toSvg("zegar.svg");
+        AnalogClock clock = new AnalogClock(cityList.get(0));
+        clock.setTime(12,30,0);
+        City.generateAnalogClocksSvg(cityList, clock);
+        //System.out.println(cityList.get(0).getCityName());
+
 
     }
 }
