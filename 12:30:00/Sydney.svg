@@ -3,7 +3,7 @@
 <text x="200" y="75" font-size="20" text-anchor="middle" alignment-baseline="middle">12</text>
   <text x="330" y="205" font-size="20" text-anchor="middle" alignment-baseline="middle">3</text>
   <text x="200" y="330" font-size="20" text-anchor="middle" alignment-baseline="middle">6</text>
-  <text x="70" y="205" font-size="20" text-anchor="middle" alignment-baseline="middle">9</text><line x1="200" y1="200" x2="200" y2="130" stroke="black" stroke-width="6" transform="rotate(25.6,200,200)" />
-<line x1="200" y1="200" x2="200" y2="90" stroke="black" stroke-width="4" transform="rotate(307.7,200,200)" />
-<line x1="200" y1="200" x2="200" y2="70" stroke="red" stroke-width="2" transform="rotate(102.0,200,200)" />
+  <text x="70" y="205" font-size="20" text-anchor="middle" alignment-baseline="middle">9</text><line x1="200" y1="200" x2="200" y2="130" stroke="black" stroke-width="6" transform="rotate(255.0,200,200)" />
+<line x1="200" y1="200" x2="200" y2="90" stroke="black" stroke-width="4" transform="rotate(180.0,200,200)" />
+<line x1="200" y1="200" x2="200" y2="70" stroke="red" stroke-width="2" transform="rotate(0.0,200,200)" />
 </svg>
